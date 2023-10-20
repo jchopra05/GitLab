@@ -1,10 +1,10 @@
 #! /usr/bin/env python3
-# A script that imports movie data and finds the top-5 highest grossing movies
+# A script that imports movie data and finds the top-10 highest grossing movies
 import csv
 
 
 def find_top_ten(filename):
-    """Finds the top 5 highest grossing movies in a CSV dataset.
+    """Finds the top 10 highest grossing movies in a CSV dataset.
        Input: filename, a string - points to filename of dataset
        Output: None
        Effect: should print five lines of text
@@ -19,7 +19,7 @@ def find_top_ten(filename):
         row["Gross"] = int(row["Gross"])
         row["Year"] = int(row["Release Date"][:4])
 
-    # Sort data and get top 5
+    # Sort data and get top 10
     gross_sort = lambda x : x["Gross"]
     rows.sort(key=gross_sort)
     top_ten = rows[:-11:-1]
